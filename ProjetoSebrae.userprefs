@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\Trabalhos\Coruja\Cursos\Easy02\RollRush\Unity\RollRush_Easy02\Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs">
+    <Files>
+      <File FileName="Assets\scripts\UI\AvisoHudControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Controladores\PersonagemControl.cs" Line="330" Column="1" />
+      <File FileName="Assets\scripts\UI\DicasHudControl.cs" Line="34" Column="15" />
+      <File FileName="..\..\..\Trabalhos\Coruja\Cursos\Easy02\RollRush\Unity\RollRush_Easy02\Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" Line="216" Column="7" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

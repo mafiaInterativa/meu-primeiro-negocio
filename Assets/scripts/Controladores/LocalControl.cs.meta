@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 45f7651f2e1ca634cad777a206e762e5
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - tenda: {fileID: 100000, guid: 461b1495e668f5c4da23fea3da6742fc, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

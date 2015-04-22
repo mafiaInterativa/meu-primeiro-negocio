@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 67215c236f65f924086bcf209bd75ea2
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - personagemControl: {instanceID: 0}
+  - sucoDesejadoImg: {instanceID: 0}
+  - LaranjaImg: {instanceID: 0}
+  - LimaoImg: {instanceID: 0}
+  - PessegoImg: {instanceID: 0}
+  - TamarindoImg: {instanceID: 0}
+  - UvaImg: {instanceID: 0}
+  - SatisfeitoImg: {instanceID: 0}
+  - InsatisfeitoImg: {instanceID: 0}
+  - soundBalao: {fileID: 8300000, guid: 8abc3fe94853228419b8c2dfed2e5811, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

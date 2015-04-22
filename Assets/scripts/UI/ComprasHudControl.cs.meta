@@ -1,0 +1,34 @@
+fileFormatVersion: 2
+guid: ebadc13a7f4c9944882e1589b37439c3
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - item01: {instanceID: 0}
+  - lblItem01: {instanceID: 0}
+  - vlrItem01: {instanceID: 0}
+  - item02: {instanceID: 0}
+  - lblItem02: {instanceID: 0}
+  - vlrItem02: {instanceID: 0}
+  - item03: {instanceID: 0}
+  - lblItem03: {instanceID: 0}
+  - vlrItem03: {instanceID: 0}
+  - item04: {instanceID: 0}
+  - lblItem04: {instanceID: 0}
+  - vlrItem04: {instanceID: 0}
+  - item05: {instanceID: 0}
+  - lblItem05: {instanceID: 0}
+  - vlrItem05: {instanceID: 0}
+  - item06: {instanceID: 0}
+  - lblItem06: {instanceID: 0}
+  - vlrItem06: {instanceID: 0}
+  - cmpQtd: {instanceID: 0}
+  - cmpTotal: {instanceID: 0}
+  - btnAdd: {instanceID: 0}
+  - btnRmv: {instanceID: 0}
+  - btnCom: {instanceID: 0}
+  - btnCls: {instanceID: 0}
+  - hudAviso: {instanceID: 0}
+  - purchaseAudio: {fileID: 8300000, guid: 7ca035f7d3d4b004bb89ec635c8141da, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
