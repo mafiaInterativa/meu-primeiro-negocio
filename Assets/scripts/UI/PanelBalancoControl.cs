@@ -7,7 +7,7 @@ public class PanelBalancoControl : MonoBehaviour {
 	/*
 	 *  VARIAVEIS
 	 */
-	
+		/*
 		//turno
 			public Text ltc_laranja;
 			public Text ltc_limao;
@@ -47,6 +47,7 @@ public class PanelBalancoControl : MonoBehaviour {
 			public Text lad_total;
 
 			public Text la_saldo;
+			*/
 	/*
 	 *  Sistema
 	 */
@@ -62,7 +63,7 @@ public class PanelBalancoControl : MonoBehaviour {
 	/*
 	 *  Game
 	 */	
-
+	/*
 	public void imprimirValores(){
 		GameManager.simulador.popularBalancos();		
 
@@ -110,4 +111,5 @@ public class PanelBalancoControl : MonoBehaviour {
 			
 			lt_saldo.text = "$" + GameManager.simulador.saldoTurno .ToString ();
 	}
+	*/
 }

@@ -185,6 +185,7 @@ public class TendaControl : MonoBehaviour {
 					
 					this.estadoTurnoAtual = false;
 					this.fimSuprimentos = false;
+					exibirHud = true;
 
 					hudControl.avisoControl.estado = false;
 				}
@@ -283,6 +284,7 @@ public class TendaControl : MonoBehaviour {
 							GameManager.simulador.encerarTurno();
 
 							this.estadoTurnoAtual = false;
+							exibirHud = true;
 						}
 					}
 				}
@@ -384,17 +386,21 @@ public class TendaControl : MonoBehaviour {
 					Destroy(copoInstanciado);
 				}
 
-			//hud
-				hudControl.exibir();
-				hudControl.abrirPainel("balanco");
-				GameManager.simulador.ressetarFluxoDeCaixa = true;
-				
-
 			//esvazia fila
 				EsvaziarFila();
 				
 
 			this.inTurno = false;
+			exibirHud = true;
+		}
+
+		//hud re-open
+		if(GameManager.simulador.statusVenda == false && exibirHud && cameraControl.lerpControl == false){
+			hudControl.exibir();
+			hudControl.abrirPainel("resultados");
+			GameManager.simulador.ressetarFluxoDeCaixa = true;
+			
+			exibirHud = false;
 		}
 
 		//checa fim do jogo

@@ -11,11 +11,17 @@ public class TendaHudControl : MonoBehaviour {
 	public Button btnCls;
 	public Button btnTrn;
 
-	public Button btnBal;
-	public GameObject pnlBal;	
+	public Button btnVendas;
+	public GameObject pnlVendas;	
 
-	public Button btnPrc;
-	public GameObject pnlPrc;	
+	public Button btnCompras;
+	public GameObject pnlCompras;
+
+	public Button btnResultados;
+	public GameObject pnlResultados;
+
+	public Button btnPrecos;
+	public GameObject pnlPrecos;	
 
 	public GameObject hudAviso;
 	public AvisoHudControl avisoControl;
@@ -39,8 +45,10 @@ public class TendaHudControl : MonoBehaviour {
 		btnTrn.onClick.AddListener(() => { iniciarSimulacao(); });
 
 		//admin
-		btnBal.onClick.AddListener(() => { abrirPainel("balanco"); });
-		btnPrc.onClick.AddListener(() => { abrirPainel("precos"); });
+		btnVendas.onClick.AddListener(() => { abrirPainel("vendas"); });
+		btnCompras.onClick.AddListener(() => { abrirPainel("compras"); });
+		btnResultados.onClick.AddListener(() => { abrirPainel("resultados"); });
+		btnPrecos.onClick.AddListener(() => { abrirPainel("precos"); });
 
 		//aviso
 		avisoControl = hudAviso.GetComponent<AvisoHudControl> ();
@@ -62,7 +70,6 @@ public class TendaHudControl : MonoBehaviour {
 		GameManager.simulador.setStatusHud(true);
 		gameObject.SetActive(true);
 
-		//this.abrirPainel("balanco");
 		this.abrirPainel("precos");
 	}
 	
@@ -100,26 +107,60 @@ public class TendaHudControl : MonoBehaviour {
 
 	public void abrirPainel(string painel){
 		this.habilitarBotoes();
+		this.desabilitarPaineis();
 
-		pnlBal.SetActive(false);
-		pnlPrc.SetActive(false);
-
-		if( painel == "balanco" ) {
-			pnlBal.SetActive(true);
-			btnBal.interactable = false;
+		if( painel == "vendas" ) {
+			pnlVendas.SetActive(true);
+			btnVendas.interactable = false;
 	
-			pnlBal.GetComponent<PanelBalancoControl>().imprimirValores();
+			//pnlBal.GetComponent<PanelBalancoControl>().imprimirValores();
+		}
+
+		if( painel == "compras" ) {
+			pnlCompras.SetActive(true);
+			btnCompras.interactable = false;
+
+			//pnlBal.GetComponent<PanelBalancoControl>().imprimirValores();
+		}
+
+		if( painel == "resultados" ) {
+			pnlResultados.SetActive(true);
+			btnResultados.interactable = false;
+
+			//pnlBal.GetComponent<PanelBalancoControl>().imprimirValores();
 		}
 
 		if( painel == "precos" ) {
-			pnlPrc.SetActive(true);	
-			btnPrc.interactable = false;
+			pnlPrecos.SetActive(true);	
+			btnPrecos.interactable = false;
 		}
-
 	}
 
 	private void habilitarBotoes(){
-		btnBal.interactable = true;
-		btnPrc.interactable = true;
+		btnVendas.interactable = true;
+		btnCompras.interactable = true;
+		btnResultados.interactable = true;
+		btnPrecos.interactable = true;
+	}
+
+	private void desabilitarBotoes(){
+		btnVendas.interactable = true;
+		btnCompras.interactable = true;
+		btnResultados.interactable = true;
+		btnPrecos.interactable = true;
+	}
+
+	private void habilitarPaineis(){
+		pnlVendas.SetActive(true);
+		pnlCompras.SetActive(true);
+		pnlResultados.SetActive(true);
+		pnlPrecos.SetActive(true);
+	}
+	
+	private void desabilitarPaineis(){
+		pnlVendas.SetActive(false);
+		pnlCompras.SetActive(false);
+		pnlResultados.SetActive(false);
+		pnlPrecos.SetActive(false);
 	}
 }

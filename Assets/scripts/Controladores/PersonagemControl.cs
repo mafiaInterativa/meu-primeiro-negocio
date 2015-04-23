@@ -179,7 +179,7 @@ public class PersonagemControl : MonoBehaviour {
 			localHudPensamento.GetComponent<PersonagemHudPensamentoControl>().exibindoPensamento = false;
 
 			//exibe dica
-			Invoke("exibirBalaoPensamento", 4);//jason
+			Invoke("exibirBalaoPensamento", Random.Range(6,22));
 		}
 
 	}

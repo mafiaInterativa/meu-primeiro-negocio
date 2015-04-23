@@ -48,7 +48,7 @@ public class PersonagemHudPensamentoControl : MonoBehaviour {
 	
 			exibeSucoFavorito(personagemControl.sucoFavorito);
 
-			Invoke("ocultar", 2); //jason
+			Invoke("ocultar", 4);
 		} else {
 			this.exibindoPensamento = true;
 		}
