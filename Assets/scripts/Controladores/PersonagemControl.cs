@@ -39,6 +39,9 @@ public class PersonagemControl : MonoBehaviour {
 	//Huds
 	public GameObject hudPersonagem;
 	public GameObject hudPersonagemFala;
+	public GameObject hudPersonagemPensamento;
+
+	private GameObject localHudPensamento;
 
 	//Texturas e acessorios
 	public bool comSuco;
@@ -119,6 +122,11 @@ public class PersonagemControl : MonoBehaviour {
 		string[] sucos = {"LARANJA", "LIMÃO", "PÊSSEGO", "TAMARINDO", "UVA"};
 		int s = Random.Range(0, sucos.Length);
 		this.sucoFavorito = sucos[s] as string;
+
+		//pensamento
+
+		localHudPensamento = Instantiate(hudPersonagemPensamento, transform.position, hudPersonagemPensamento.transform.rotation) as GameObject;
+		localHudPensamento.GetComponent<PersonagemHudPensamentoControl>().personagemControl = GetComponent<PersonagemControl>();
 	}
 	
 	void Update () {
@@ -165,6 +173,14 @@ public class PersonagemControl : MonoBehaviour {
 			}
 		}
 
+		//pensamento
+
+		if(localHudPensamento.GetComponent<PersonagemHudPensamentoControl>().exibindoPensamento == true && GameManager.simulador.statusHud == false && GameManager.simulador.statusVenda == false){
+			localHudPensamento.GetComponent<PersonagemHudPensamentoControl>().exibindoPensamento = false;
+
+			//exibe dica
+			Invoke("exibirBalaoPensamento", 4);//jason
+		}
 
 	}
 
@@ -205,6 +221,10 @@ public class PersonagemControl : MonoBehaviour {
 	/*
 	 *  Game
 	 */
+
+	public void exibirBalaoPensamento(){
+		localHudPensamento.GetComponent<PersonagemHudPensamentoControl>().exibir();
+	}
 
 	public void exibirBalaoPedido(){
 		//balao do suco desejado
