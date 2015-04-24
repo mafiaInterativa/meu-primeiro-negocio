@@ -398,6 +398,7 @@ public class TendaControl : MonoBehaviour {
 		if(GameManager.simulador.statusVenda == false && exibirHud && cameraControl.lerpControl == false){
 			hudControl.exibir();
 			hudControl.abrirPainel("resultados");
+
 			GameManager.simulador.ressetarFluxoDeCaixa = true;
 			
 			exibirHud = false;

@@ -74,9 +74,11 @@
      <Compile Include="Assets\scripts\UI\HudPlacaControl.cs" />
      <Compile Include="Assets\scripts\UI\MainHudControl.cs" />
      <Compile Include="Assets\scripts\UI\MenuHudControl.cs" />
-     <Compile Include="Assets\scripts\UI\PanelBalancoControl.cs" />
+     <Compile Include="Assets\scripts\UI\PanelCompraControl.cs" />
      <Compile Include="Assets\scripts\UI\PanelOpcoes.cs" />
      <Compile Include="Assets\scripts\UI\PanelPrecoControl.cs" />
+     <Compile Include="Assets\scripts\UI\PanelResultadoControl.cs" />
+     <Compile Include="Assets\scripts\UI\PanelVendaControl.cs" />
      <Compile Include="Assets\scripts\UI\PersonagemHudControl.cs" />
      <Compile Include="Assets\scripts\UI\PersonagemHudFalaControl.cs" />
      <Compile Include="Assets\scripts\UI\PersonagemHudPensamentoControl.cs" />
