@@ -113,21 +113,21 @@ public class TendaHudControl : MonoBehaviour {
 			pnlVendas.SetActive(true);
 			btnVendas.interactable = false;
 	
-			//pnlBal.GetComponent<PanelBalancoControl>().imprimirValores();
+			pnlVendas.GetComponent<PanelVendaControl>().imprimirValores();
 		}
 
 		if( painel == "compras" ) {
 			pnlCompras.SetActive(true);
 			btnCompras.interactable = false;
 
-			//pnlBal.GetComponent<PanelBalancoControl>().imprimirValores();
+			pnlCompras.GetComponent<PanelCompraControl>().imprimirValores();
 		}
 
 		if( painel == "resultados" ) {
 			pnlResultados.SetActive(true);
 			btnResultados.interactable = false;
 
-			//pnlBal.GetComponent<PanelBalancoControl>().imprimirValores();
+			pnlResultados.GetComponent<PanelResultadoControl>().imprimirValores();
 		}
 
 		if( painel == "precos" ) {

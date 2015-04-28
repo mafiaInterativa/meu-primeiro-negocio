@@ -77,7 +77,7 @@ public class TendaControl : MonoBehaviour {
 		cameraObject = GameObject.FindWithTag ("MainCamera");
 		
 		cameraControl = cameraObject.GetComponent<CameraControl> ();
-		hudControl = hud.GetComponent<TendaHudControl>();
+		hudControl = this.hud.GetComponent<TendaHudControl>();
 	}
 	
 	void Update () {

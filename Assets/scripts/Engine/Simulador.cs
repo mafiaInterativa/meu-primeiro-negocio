@@ -33,6 +33,14 @@ public class Simulador {
 			public int qtdGelo = 0;
 			public int qtdCopo = 0;	
 
+			public int qtdLaranjaTurno = 0;
+			public int qtdLimaoTurno = 0;
+			public int qtdUvaTurno = 0;
+			public int qtdTamarindoTurno = 0;
+			public int qtdPessegoTurno = 0;
+			public int qtdGeloTurno = 0;
+			public int qtdCopoTurno = 0;	
+
 			public int prcSucoLaranja = 5;	
 			public int prcSucoLimao = 6;
 			public int prcSucoUva = 11;
@@ -183,6 +191,14 @@ public class Simulador {
 			this.lucroTamarindoTurno = 0;
 			this.lucroUvaTurno = 0;
 			this.lucroTotalTurno = 0;
+
+			this.qtdLaranjaTurno = 0;
+			this.qtdLimaoTurno = 0;
+			this.qtdUvaTurno = 0;
+			this.qtdTamarindoTurno = 0;
+			this.qtdPessegoTurno = 0;
+			this.qtdGeloTurno = 0;
+			this.qtdCopoTurno = 0;	
 				
 			this.saldoTurno = 0;
 
@@ -198,6 +214,7 @@ public class Simulador {
 
 		public void setQtdLaranja(int qtd){
 			this.qtdLaranja += qtd;
+			this.qtdLaranjaTurno += qtd;
 		}
 
 		public int getQtdLimao(){
@@ -206,6 +223,7 @@ public class Simulador {
 
 		public void setQtdLimao(int qtd){
 			this.qtdLimao += qtd;
+			this.qtdLimaoTurno += qtd;
 		}
 
 		public int getQtdUva(){
@@ -214,6 +232,7 @@ public class Simulador {
 
 		public void setQtdUva(int qtd){
 			this.qtdUva += qtd;
+			this.qtdUvaTurno += qtd;
 		}
 
 		public int getQtdTamarindo(){
@@ -222,6 +241,7 @@ public class Simulador {
 
 		public void setQtdTamarindo(int qtd){
 			this.qtdTamarindo += qtd;
+			this.qtdTamarindoTurno += qtd;
 		}
 
 		public int getQtdPessego(){
@@ -230,6 +250,7 @@ public class Simulador {
 
 		public void setQtdPessego(int qtd){
 			this.qtdPessego += qtd;
+			this.qtdPessegoTurno += qtd;
 		}
 
 		public int getQtdGelo(){
@@ -238,6 +259,7 @@ public class Simulador {
 
 		public void setQtdGelo(int qtd){
 			this.qtdGelo += qtd;
+			this.qtdGeloTurno += qtd;
 		}
 
 		public int getQtdCopo(){
@@ -246,6 +268,7 @@ public class Simulador {
 
 		public void setQtdCopo(int qtd){
 			this.qtdCopo += qtd;
+			this.qtdCopoTurno += qtd;
 		}
 
 		//fncs de turno
