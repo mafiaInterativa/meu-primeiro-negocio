@@ -77,14 +77,21 @@ public class TendaControl : MonoBehaviour {
 		cameraObject = GameObject.FindWithTag ("MainCamera");
 		
 		cameraControl = cameraObject.GetComponent<CameraControl> ();
-		hudControl = this.hud.GetComponent<TendaHudControl>();
+		hudControl = hud.GetComponent<TendaHudControl>();
 	}
 	
 	void Update () {
 		if(exibirHud && cameraControl.lerpControl == false){	
 			//exibe a hud
 			hudControl.exibir();
-			
+
+			//hud re-open
+			if(GameManager.simulador.statusVenda == false){
+				hudControl.abrirPainel("resultados");
+
+
+			}
+		
 			exibirHud = false;
 		}
 
@@ -390,18 +397,12 @@ public class TendaControl : MonoBehaviour {
 				EsvaziarFila();
 				
 
+			if(GameManager.simulador.turno > 1){
+				GameManager.simulador.ressetarFluxoDeCaixa = true;
+			}
+
 			this.inTurno = false;
 			exibirHud = true;
-		}
-
-		//hud re-open
-		if(GameManager.simulador.statusVenda == false && exibirHud && cameraControl.lerpControl == false){
-			hudControl.exibir();
-			hudControl.abrirPainel("resultados");
-
-			GameManager.simulador.ressetarFluxoDeCaixa = true;
-			
-			exibirHud = false;
 		}
 
 		//checa fim do jogo

@@ -33,14 +33,6 @@ public class Simulador {
 			public int qtdGelo = 0;
 			public int qtdCopo = 0;	
 
-			public int qtdLaranjaTurno = 0;
-			public int qtdLimaoTurno = 0;
-			public int qtdUvaTurno = 0;
-			public int qtdTamarindoTurno = 0;
-			public int qtdPessegoTurno = 0;
-			public int qtdGeloTurno = 0;
-			public int qtdCopoTurno = 0;	
-
 			public int prcSucoLaranja = 5;	
 			public int prcSucoLimao = 6;
 			public int prcSucoUva = 11;
@@ -74,7 +66,15 @@ public class Simulador {
 			public int lucroTamarindo = 0;
 			public int lucroUva = 0;
 			public int lucroTotal = 0;
-					
+
+			public int qtdLaranjaAcumulado = 0;
+			public int qtdLimaoAcumulado = 0;
+			public int qtdUvaAcumulado = 0;
+			public int qtdTamarindoAcumulado = 0;
+			public int qtdPessegoAcumulado = 0;
+			public int qtdGeloAcumulado = 0;
+			public int qtdCopoAcumulado = 0;
+							
 			public int saldo = 0;			
 
 			//turno
@@ -94,6 +94,14 @@ public class Simulador {
 			public int lucroTamarindoTurno = 0;
 			public int lucroUvaTurno = 0;
 			public int lucroTotalTurno = 0;
+
+			public int qtdLaranjaTurno = 0;
+			public int qtdLimaoTurno = 0;
+			public int qtdUvaTurno = 0;
+			public int qtdTamarindoTurno = 0;
+			public int qtdPessegoTurno = 0;
+			public int qtdGeloTurno = 0;
+			public int qtdCopoTurno = 0;	
 		
 			public int saldoTurno = 0;
 	
@@ -160,19 +168,7 @@ public class Simulador {
 				this.gameWin = true;
 			}
 		}
-
-		public void popularBalancos(){
-			//turno
-			this.custoTotalTurno = this.custoAluguelTurno + this.custoLaranjaTurno + this.custoLimaoTurno + this.custoPessegoTurno + this.custoTamarindoTurno + this.custoUvaTurno + this.custoCopoTurno + this.custoGeloTurno;
-			this.lucroTotalTurno = this.lucroLaranjaTurno + this.lucroLimaoTurno + this.lucroPessegoTurno + this.lucroTamarindoTurno + this.lucroUvaTurno;
-			this.saldoTurno = this.lucroTotalTurno - this.custoTotalTurno;
-			
-			//acumulado
-			this.custoTotal = this.custoAluguel + this.custoLaranja + this.custoLimao + this.custoPessego + this.custoTamarindo + this.custoUva + this.custoCopo + this.custoGelo;
-			this.lucroTotal = this.lucroLaranja + this.lucroLimao + this.lucroPessego + this.lucroTamarindo + this.lucroUva;
-			this.saldo = this.orcamento /*+ (this.lucroTotal - this.custoTotal)*/;
-		}
-
+	
 		public void ressetarBalancos(){
 			this.custoAluguelTurno = 0;
 
@@ -214,7 +210,9 @@ public class Simulador {
 
 		public void setQtdLaranja(int qtd){
 			this.qtdLaranja += qtd;
+
 			this.qtdLaranjaTurno += qtd;
+			this.qtdLaranjaAcumulado += qtd;
 		}
 
 		public int getQtdLimao(){
@@ -223,7 +221,9 @@ public class Simulador {
 
 		public void setQtdLimao(int qtd){
 			this.qtdLimao += qtd;
+
 			this.qtdLimaoTurno += qtd;
+			this.qtdLimaoAcumulado += qtd;
 		}
 
 		public int getQtdUva(){
@@ -232,7 +232,9 @@ public class Simulador {
 
 		public void setQtdUva(int qtd){
 			this.qtdUva += qtd;
+
 			this.qtdUvaTurno += qtd;
+			this.qtdUvaAcumulado += qtd;
 		}
 
 		public int getQtdTamarindo(){
@@ -241,7 +243,9 @@ public class Simulador {
 
 		public void setQtdTamarindo(int qtd){
 			this.qtdTamarindo += qtd;
+
 			this.qtdTamarindoTurno += qtd;
+			this.qtdTamarindoAcumulado += qtd;
 		}
 
 		public int getQtdPessego(){
@@ -250,7 +254,9 @@ public class Simulador {
 
 		public void setQtdPessego(int qtd){
 			this.qtdPessego += qtd;
+
 			this.qtdPessegoTurno += qtd;
+			this.qtdPessegoAcumulado += qtd;
 		}
 
 		public int getQtdGelo(){
@@ -259,7 +265,9 @@ public class Simulador {
 
 		public void setQtdGelo(int qtd){
 			this.qtdGelo += qtd;
+
 			this.qtdGeloTurno += qtd;
+			this.qtdGeloAcumulado += qtd;
 		}
 
 		public int getQtdCopo(){
@@ -268,7 +276,9 @@ public class Simulador {
 
 		public void setQtdCopo(int qtd){
 			this.qtdCopo += qtd;
+
 			this.qtdCopoTurno += qtd;
+			this.qtdCopoAcumulado += qtd;
 		}
 
 		//fncs de turno

@@ -71,20 +71,27 @@ public class GameManager : MonoBehaviour {
 		GameManager.simulador.qtdPessego = int.Parse( dados[12] );
 		GameManager.simulador.qtdTamarindo = int.Parse( dados[13] );
 		GameManager.simulador.qtdUva = int.Parse( dados[14] );
-		GameManager.simulador.prcSucoLaranja = int.Parse( dados[15] );
-		GameManager.simulador.prcSucoLimao = int.Parse( dados[16] );
-		GameManager.simulador.prcSucoPessego = int.Parse( dados[17] );
-		GameManager.simulador.prcSucoTamarindo = int.Parse( dados[18] );
-		GameManager.simulador.prcSucoUva = int.Parse( dados[19] );
-		GameManager.simulador.custoAluguel = int.Parse( dados[20] );
-		GameManager.simulador.custoLaranja = int.Parse( dados[21] );
-		GameManager.simulador.custoLimao = int.Parse( dados[22] );
-		GameManager.simulador.custoPessego = int.Parse( dados[23] );
-		GameManager.simulador.custoTamarindo = int.Parse( dados[24] );
-		GameManager.simulador.custoUva = int.Parse( dados[25] );
-		GameManager.simulador.custoCopo = int.Parse( dados[26] );
-		GameManager.simulador.custoGelo = int.Parse( dados[27] );
-		GameManager.simulador.custoTotal = int.Parse( dados[28] );
+		GameManager.simulador.qtdLaranjaAcumulado = int.Parse( dados[15] );
+		GameManager.simulador.qtdLimaoAcumulado = int.Parse( dados[16] );
+		GameManager.simulador.qtdUvaAcumulado = int.Parse( dados[17] );
+		GameManager.simulador.qtdTamarindoAcumulado = int.Parse( dados[18] );
+		GameManager.simulador.qtdPessegoAcumulado = int.Parse( dados[19] );
+		GameManager.simulador.qtdGeloAcumulado = int.Parse( dados[20] );
+		GameManager.simulador.qtdCopoAcumulado = int.Parse( dados[21] );
+		GameManager.simulador.prcSucoLaranja = int.Parse( dados[22] );
+		GameManager.simulador.prcSucoLimao = int.Parse( dados[23] );
+		GameManager.simulador.prcSucoPessego = int.Parse( dados[24] );
+		GameManager.simulador.prcSucoTamarindo = int.Parse( dados[25] );
+		GameManager.simulador.prcSucoUva = int.Parse( dados[26] );
+		GameManager.simulador.custoAluguel = int.Parse( dados[27] );
+		GameManager.simulador.custoLaranja = int.Parse( dados[28] );
+		GameManager.simulador.custoLimao = int.Parse( dados[29] );
+		GameManager.simulador.custoPessego = int.Parse( dados[30] );
+		GameManager.simulador.custoTamarindo = int.Parse( dados[31] );
+		GameManager.simulador.custoUva = int.Parse( dados[32] );
+		GameManager.simulador.custoCopo = int.Parse( dados[33] );
+		GameManager.simulador.custoGelo = int.Parse( dados[34] );
+		GameManager.simulador.custoTotal = int.Parse( dados[35] );
 		
 		GameObject[] placas;
 		placas = GameObject.FindGameObjectsWithTag("Placa");
@@ -94,7 +101,7 @@ public class GameManager : MonoBehaviour {
 			if ( lc.numeroLocalidade == GameManager.simulador.numeroLocalidade ) {
 				
 				GameObject tendaInstanciada = Instantiate( tenda, placas[i].transform.position, placas[i].transform.rotation) as GameObject;
-				tendaInstanciada.GetComponent<TendaControl>().hud = tendaHud;
+				tendaInstanciada.GetComponent<TendaControl>().hud = lc.tendaHud;
 				Destroy (placas[i]);
 
 				break;
