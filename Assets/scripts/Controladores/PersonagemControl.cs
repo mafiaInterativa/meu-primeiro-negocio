@@ -229,15 +229,23 @@ public class PersonagemControl : MonoBehaviour {
 	}
 
 	public void exibirBalaoPedido(){
-		//gera suco desejado
-		int suco = Random.Range(0, sucosDisponiveis.Count);
-		if (sucosDisponiveis.Count > 0)
-			this.sucoDesejado = sucosDisponiveis[suco] as string;
-
 		//balao do suco desejado
 		GameObject localHudPersonagemFala = Instantiate(hudPersonagemFala, transform.position, hudPersonagemFala.transform.rotation) as GameObject;
-		localHudPersonagemFala.GetComponent<PersonagemHudFalaControl>().personagemControl = GetComponent<PersonagemControl>();
-		localHudPersonagemFala.GetComponent<PersonagemHudFalaControl>().exibeSucoDesejado (this.sucoDesejado);
+
+		this.ressetaSucosDisponiveis();
+
+		int suco = Random.Range(0, sucosDisponiveis.Count);
+		if (sucosDisponiveis.Count > 0){
+			this.sucoDesejado = sucosDisponiveis[suco] as string;
+
+			localHudPersonagemFala.GetComponent<PersonagemHudFalaControl>().personagemControl = GetComponent<PersonagemControl>();
+			localHudPersonagemFala.GetComponent<PersonagemHudFalaControl>().exibeSucoDesejado (this.sucoDesejado);
+		} else {
+			localHudPersonagemFala.GetComponent<PersonagemHudFalaControl>().personagemControl = GetComponent<PersonagemControl>();
+			localHudPersonagemFala.GetComponent<PersonagemHudFalaControl>().exibeSentimento("insatisfeito");
+
+			tenda.AndaFila();
+		}
 	}
 
 	public void exibirBalaoSatisfacao(string sentimento){
@@ -273,7 +281,9 @@ public class PersonagemControl : MonoBehaviour {
 		 * 
 		 * 
 		 */
-
+		int suco = Random.Range(0, sucosDisponiveis.Count);
+		if (sucosDisponiveis.Count <= 0)
+			return false;
 		int quantidadeFila = tenda.quantidadeFila;
 		float random = Random.value;
 		float coeficente = (0.2f - (pressa/100 * 0.2f) + (0.2f -(2.5f * quantidadeFila/100))) + (satisfacao/100 * 0.3f) + (sede/100 * 0.25f);

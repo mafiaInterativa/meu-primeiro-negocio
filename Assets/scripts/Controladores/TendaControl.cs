@@ -192,7 +192,7 @@ public class TendaControl : MonoBehaviour {
 					
 					this.estadoTurnoAtual = false;
 					this.fimSuprimentos = false;
-					exibirHud = true;
+					this.exibirHud = true;
 
 					hudControl.avisoControl.estado = false;
 				}
@@ -291,7 +291,7 @@ public class TendaControl : MonoBehaviour {
 							GameManager.simulador.encerarTurno();
 
 							this.estadoTurnoAtual = false;
-							exibirHud = true;
+							this.exibirHud = true;
 						}
 					}
 				}
