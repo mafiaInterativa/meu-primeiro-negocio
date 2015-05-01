@@ -350,13 +350,13 @@ public class PersonagemControl : MonoBehaviour {
 		//Debug.Log ("Preço Suco Laranja " + GameManager.simulador.prcSucoLaranja);
 
 
-		Debug.Log ("Redução Coeficiente: " + reducaoCoeficiente);
-		Debug.Log ("Coeficiente: " + coeficente);
+		//Debug.Log ("Redução Coeficiente: " + reducaoCoeficiente);
+		//Debug.Log ("Coeficiente: " + coeficente);
 		//Aplica a reducaoCoeficiete ao coeficiente
 		coeficente -= reducaoCoeficiente;
 
-		Debug.Log ("Coeficiente(pós redução): " + coeficente);
-		Debug.Log ("Random: " + random);
+		//Debug.Log ("Coeficiente(pós redução): " + coeficente);
+		//Debug.Log ("Random: " + random);
 		//Debug.Log ("Coeficiente: " + coeficente + "Random: " + random + "Suco: " + disponibilidadeSucoFavorito + " > " + disponibilidadeSucoFavorito);
 
 		if (random < coeficente){
