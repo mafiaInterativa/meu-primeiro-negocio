@@ -85,6 +85,10 @@ public class CameraControl : MonoBehaviour {
 
 			if( Vector3.Distance(camera.transform.position, posicaoFinal) <= 0.01f ){
 				this.lerpControl = false;
+
+				//correcao da camera
+				camera.transform.position = posicaoFinal;
+				camera.transform.rotation = rotacaoFinal;
 				
 				if(this.LerpMov == true){
 					this.movimentacao = true;
