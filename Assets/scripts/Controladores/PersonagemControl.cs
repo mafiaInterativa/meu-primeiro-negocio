@@ -69,7 +69,11 @@ public class PersonagemControl : MonoBehaviour {
 	/*
 	 *  Sistema
 	 */
-
+	void Awake(){
+		randomCorCabelo = corCabelo[Random.Range(0,corCabelo.Length)];
+		barba.renderer.material.color = randomCorCabelo;
+		bigode.renderer.material.color = randomCorCabelo;
+	}
 	void Start () {
 
 		int randomMaterial = Random.Range(0, personagemMaterial.Length);
@@ -85,9 +89,7 @@ public class PersonagemControl : MonoBehaviour {
 		if(Random.value > chanceOculos)
 			oculos.SetActive(false);
 
-		randomCorCabelo = corCabelo[Random.Range(0,corCabelo.Length)];
-		barba.renderer.material.color = randomCorCabelo;
-		bigode.renderer.material.color = randomCorCabelo;
+
 		if (cabelos[randomCabelo] != null){
 			cabelos[randomCabelo].SetActive(true);
 			cabelos[randomCabelo].renderer.material.color = randomCorCabelo;
@@ -190,7 +192,7 @@ public class PersonagemControl : MonoBehaviour {
 
 		if(collider.tag == "Tenda" && estado == Estado.caminhando){
 			tenda = collider.GetComponent<TendaControl>();
-			if( GameManager.simulador.statusVenda && this.Probabilidade() && this.Preco() ){
+			if( GameManager.simulador.statusVenda && this.Probabilidade() ){
 				int quantidadeFila = collider.GetComponent<TendaControl>().quantidadeFila;
 
 				if(quantidadeFila < collider.GetComponent<TendaControl>().filaLocais.Length){
@@ -200,8 +202,8 @@ public class PersonagemControl : MonoBehaviour {
 					collider.GetComponent<TendaControl>().quantidadeFila++;
 
 					//gera suco desejado
-					int suco = Random.Range(0, sucosDisponiveis.Count);
-					this.sucoDesejado = sucosDisponiveis[suco] as string;
+					//int suco = Random.Range(0, sucosDisponiveis.Count);
+					//this.sucoDesejado = sucosDisponiveis[suco] as string;
 					
 					//this.exibirBalaoPedido();
 				}
@@ -261,14 +263,87 @@ public class PersonagemControl : MonoBehaviour {
 		 * Satisfação		30%
 		 * Sede				25%
 		 * Fruta Pref.		25%
+		 * 
+		 * 
+		 * 
+		 * 
 		 */
-
+		int suco = Random.Range(0, sucosDisponiveis.Count);
+		if (sucosDisponiveis.Count > 0)
+			this.sucoDesejado = sucosDisponiveis[suco] as string;
 		int quantidadeFila = tenda.quantidadeFila;
 		float random = Random.value;
 		float coeficente = (0.2f - (pressa/100 * 0.2f) + (0.2f -(2.5f * quantidadeFila/100))) + (satisfacao/100 * 0.3f) + (sede/100 * 0.25f);
 		if (disponibilidadeSucoFavorito)
 			coeficente += 0.25f;
 
+
+		// Preço Maximo antes de sofrer reduçao na chance de compra de cada fruta:
+
+		// Caso o preço seja maior que o preço máximo o coeficiente de compra sofre
+		// uma redução, sendo impossível de vender um suco com o preço muito acima do preço máximo.
+
+		int prcMaxLaranja = 8;
+		int prcMaxLimao = 9;
+		int prcMaxPessego = 10;
+		int prcMaxUva = 15;
+		int prcMaxTamarindo = 20;
+
+		//Declaração e Reset da Redução Coeficiente
+		float reducaoCoeficiente = 0;
+
+		//% de redução para cada $1 a mais do preço máximo. Ex.: 0.2f = 20%
+		float multiplicadorReducao = 0.1f;
+
+
+		//Verifica o suco desejado pelo cliente e calcula se o mesmo está acima do preço máximo
+		//calculando assim a reducaoCoeficiente
+		if (sucoDesejado == "LARANJA"){
+			if (GameManager.simulador.prcSucoLaranja > prcMaxLaranja){
+				reducaoCoeficiente = (GameManager.simulador.prcSucoLaranja - prcMaxLaranja) * multiplicadorReducao;
+			}
+		}
+
+		if (sucoDesejado == "LIMÃO"){
+			if (GameManager.simulador.prcSucoLimao > prcMaxLimao){
+				reducaoCoeficiente = (GameManager.simulador.prcSucoLimao - prcMaxLimao) * multiplicadorReducao;
+			}
+		}
+
+		if (sucoDesejado == "PÊSSEGO"){
+			if (GameManager.simulador.prcSucoPessego > prcMaxPessego){
+				reducaoCoeficiente = (GameManager.simulador.prcSucoPessego - prcMaxPessego) * multiplicadorReducao;
+			}
+		}
+
+		if (sucoDesejado == "UVA"){
+			if (GameManager.simulador.prcSucoUva > prcMaxUva){
+				reducaoCoeficiente = (GameManager.simulador.prcSucoUva - prcMaxUva) * multiplicadorReducao;
+			}
+		}
+
+		if (sucoDesejado == "TAMARINDO"){
+			if (GameManager.simulador.prcSucoTamarindo > prcMaxTamarindo){
+				reducaoCoeficiente = (GameManager.simulador.prcSucoTamarindo - prcMaxTamarindo) * multiplicadorReducao;
+			}
+		}
+
+		//Debug.Log ("Suco Desejado: " + sucoDesejado);
+
+		//Debug.Log ("Sede: " + sede);
+		//Debug.Log ("Pressa: " + pressa);
+		//Debug.Log ("Tem o suco favorito? " + disponibilidadeSucoFavorito);
+		//Debug.Log ("Suco desejado: " + sucoDesejado);
+		//Debug.Log ("Preço Suco Laranja " + GameManager.simulador.prcSucoLaranja);
+
+
+		Debug.Log ("Redução Coeficiente: " + reducaoCoeficiente);
+		Debug.Log ("Coeficiente: " + coeficente);
+		//Aplica a reducaoCoeficiete ao coeficiente
+		coeficente -= reducaoCoeficiente;
+
+		Debug.Log ("Coeficiente(pós redução): " + coeficente);
+		Debug.Log ("Random: " + random);
 		//Debug.Log ("Coeficiente: " + coeficente + "Random: " + random + "Suco: " + disponibilidadeSucoFavorito + " > " + disponibilidadeSucoFavorito);
 
 		if (random < coeficente){
