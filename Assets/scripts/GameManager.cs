@@ -92,6 +92,17 @@ public class GameManager : MonoBehaviour {
 		GameManager.simulador.custoCopo = int.Parse( dados[33] );
 		GameManager.simulador.custoGelo = int.Parse( dados[34] );
 		GameManager.simulador.custoTotal = int.Parse( dados[35] );
+		GameManager.simulador.custoSucoLaranja = int.Parse( dados[36] );
+		GameManager.simulador.custoSucoLimao = int.Parse( dados[37] );
+		GameManager.simulador.custoSucoPessego = int.Parse( dados[38] );
+		GameManager.simulador.custoSucoTamarindo = int.Parse( dados[39] );
+		GameManager.simulador.custoSucoUva = int.Parse( dados[40] );
+		GameManager.simulador.lucroLaranja = int.Parse( dados[41] );
+		GameManager.simulador.lucroLimao = int.Parse( dados[42] );
+		GameManager.simulador.lucroPessego = int.Parse( dados[43] );
+		GameManager.simulador.lucroTamarindo = int.Parse( dados[44] );
+		GameManager.simulador.lucroUva = int.Parse( dados[45] );
+		GameManager.simulador.lucroTotal = int.Parse( dados[46] );
 		
 		GameObject[] placas;
 		placas = GameObject.FindGameObjectsWithTag("Placa");

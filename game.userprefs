@@ -1,13 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\Controladores\TendaControl.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\UI\PanelCompraControl.cs">
     <Files>
-      <File FileName="Assets\scripts\UI\PanelCompraControl.cs" Line="27" Column="41" />
-      <File FileName="Assets\scripts\UI\PanelResultadoControl.cs" Line="25" Column="6" />
-      <File FileName="Assets\scripts\UI\PanelVendaControl.cs" Line="5" Column="31" />
-      <File FileName="Assets\scripts\Engine\Simulador.cs" Line="131" Column="26" />
-      <File FileName="Assets\scripts\UI\TendaHudControl.cs" Line="91" Column="45" />
-      <File FileName="Assets\scripts\Controladores\TendaControl.cs" Line="93" Column="5" />
+      <File FileName="Assets\scripts\Engine\Simulador.cs" Line="158" Column="5" />
+      <File FileName="Assets\scripts\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\UI\PanelVendaControl.cs" Line="23" Column="41" />
+      <File FileName="Assets\scripts\UI\PanelCompraControl.cs" Line="13" Column="4" />
+      <File FileName="Assets\scripts\UI\PanelResultadoControl.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

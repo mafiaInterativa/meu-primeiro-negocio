@@ -107,7 +107,18 @@ public class FuncionalidadesControl : MonoBehaviour {
 							+ GameManager.simulador.custoUva.ToString() + ";"
 							+ GameManager.simulador.custoCopo.ToString() + ";"
 							+ GameManager.simulador.custoGelo.ToString() + ";"
-							+ GameManager.simulador.custoTotal.ToString();
+							+ GameManager.simulador.custoTotal.ToString() + ";"
+							+ GameManager.simulador.custoSucoLaranja.ToString() + ";"
+							+ GameManager.simulador.custoSucoLimao.ToString() + ";"
+							+ GameManager.simulador.custoSucoPessego.ToString() + ";"
+							+ GameManager.simulador.custoSucoTamarindo.ToString() + ";"
+							+ GameManager.simulador.custoSucoUva.ToString() + ";"
+							+ GameManager.simulador.lucroLaranja.ToString() + ";"
+							+ GameManager.simulador.lucroLimao.ToString() + ";"
+							+ GameManager.simulador.lucroPessego.ToString() + ";"
+							+ GameManager.simulador.lucroTamarindo.ToString() + ";"
+							+ GameManager.simulador.lucroUva.ToString() + ";"
+							+ GameManager.simulador.lucroTotal.ToString();
 		GameManager.simulador.salvar(salvarDado);
 	}
 	

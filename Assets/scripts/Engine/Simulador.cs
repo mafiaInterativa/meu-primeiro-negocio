@@ -50,22 +50,28 @@ public class Simulador {
 			public bool ressetarFluxoDeCaixa = false;
 
 			//acumulado
-			public int custoAluguel = 0;
-			public int custoLaranja = 0;
-			public int custoLimao = 0;
-			public int custoPessego = 0;
-			public int custoTamarindo = 0;
-			public int custoUva = 0;
-			public int custoCopo = 0;
-			public int custoGelo = 0;
-			public int custoTotal = 0;
-					
-			public int lucroLaranja = 0;
-			public int lucroLimao = 0;
-			public int lucroPessego = 0;
-			public int lucroTamarindo = 0;
-			public int lucroUva = 0;
-			public int lucroTotal = 0;
+			public float custoAluguel = 0;
+			public float custoLaranja = 0;
+			public float custoLimao = 0;
+			public float custoPessego = 0;
+			public float custoTamarindo = 0;
+			public float custoUva = 0;
+			public float custoCopo = 0;
+			public float custoGelo = 0;
+			public float custoTotal = 0;
+
+			public float custoSucoLaranja = 0;
+			public float custoSucoLimao = 0;
+			public float custoSucoPessego = 0;
+			public float custoSucoTamarindo = 0;
+			public float custoSucoUva = 0;
+								
+			public float lucroLaranja = 0;
+			public float lucroLimao = 0;
+			public float lucroPessego = 0;
+			public float lucroTamarindo = 0;
+			public float lucroUva = 0;
+			public float lucroTotal = 0;
 
 			public int qtdLaranjaAcumulado = 0;
 			public int qtdLimaoAcumulado = 0;
@@ -74,26 +80,32 @@ public class Simulador {
 			public int qtdPessegoAcumulado = 0;
 			public int qtdGeloAcumulado = 0;
 			public int qtdCopoAcumulado = 0;
-							
-			public int saldo = 0;			
+								
+			public float saldo = 0;			
 
 			//turno
-			public int custoAluguelTurno = 0;
-			public int custoLaranjaTurno = 0;
-			public int custoLimaoTurno = 0;
-			public int custoPessegoTurno = 0;
-			public int custoTamarindoTurno = 0;
-			public int custoUvaTurno = 0;
-			public int custoCopoTurno = 0;
-			public int custoGeloTurno = 0;
-			public int custoTotalTurno = 0;
-			
-			public int lucroLaranjaTurno = 0;
-			public int lucroLimaoTurno = 0;
-			public int lucroPessegoTurno = 0;
-			public int lucroTamarindoTurno = 0;
-			public int lucroUvaTurno = 0;
-			public int lucroTotalTurno = 0;
+			public float custoAluguelTurno = 0;
+			public float custoLaranjaTurno = 0;
+			public float custoLimaoTurno = 0;
+			public float custoPessegoTurno = 0;
+			public float custoTamarindoTurno = 0;
+			public float custoUvaTurno = 0;
+			public float custoCopoTurno = 0;
+			public float custoGeloTurno = 0;
+			public float custoTotalTurno = 0;
+
+			public float custoSucoLaranjaTurno = 0;
+			public float custoSucoLimaoTurno = 0;
+			public float custoSucoPessegoTurno = 0;
+			public float custoSucoTamarindoTurno = 0;
+			public float custoSucoUvaTurno = 0;
+					
+			public float lucroLaranjaTurno = 0;
+			public float lucroLimaoTurno = 0;
+			public float lucroPessegoTurno = 0;
+			public float lucroTamarindoTurno = 0;
+			public float lucroUvaTurno = 0;
+			public float lucroTotalTurno = 0;
 
 			public int qtdLaranjaTurno = 0;
 			public int qtdLimaoTurno = 0;
@@ -103,7 +115,7 @@ public class Simulador {
 			public int qtdGeloTurno = 0;
 			public int qtdCopoTurno = 0;	
 		
-			public int saldoTurno = 0;
+			public float saldoTurno = 0;
 	
 		/* publico */
 			public int publicoSatisfeito = 0;
@@ -150,7 +162,7 @@ public class Simulador {
 
 			//pontuacao
 			if(this.saldoTurno > 0){
-				pontuacao += this.saldoTurno * 100;
+				pontuacao += (int) Mathf.Round(this.saldoTurno * 100);
 			}
 
 			if(this.publicoSatisfeito > 0){
@@ -180,6 +192,12 @@ public class Simulador {
 			this.custoCopoTurno = 0;
 			this.custoGeloTurno = 0;
 			this.custoTotalTurno = 0;
+
+			this.custoSucoLaranjaTurno = 0;
+			this.custoSucoLimaoTurno = 0;
+			this.custoSucoPessegoTurno = 0;
+			this.custoSucoTamarindoTurno = 0;
+			this.custoSucoUvaTurno = 0;
 				
 			this.lucroLaranjaTurno = 0;
 			this.lucroLimaoTurno = 0;
