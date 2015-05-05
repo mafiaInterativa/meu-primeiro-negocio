@@ -28,10 +28,10 @@ public class AvisoHudControl : MonoBehaviour {
 		btnOk.onClick.AddListener(() => { ocultar(); });
 
 		//aviso
-		cameraObject = GameObject.FindWithTag ("MainCamera");
-		cameraControl = cameraObject.GetComponent<CameraControl> ();
+		//cameraObject = GameObject.FindWithTag ("MainCamera");
+		//cameraControl = cameraObject.GetComponent<CameraControl> ();
 
-		estado = false;
+		//estado = false;
 	}
 
 
@@ -44,8 +44,8 @@ public class AvisoHudControl : MonoBehaviour {
 	 */	
 
 	public void exibir(string mensagem) {
-		cameraControl.setMovimentacao(false);
-		GameManager.simulador.setStatusHud(true);
+		//cameraControl.setMovimentacao(false);
+		//GameManager.simulador.setStatusHud(true);
 		gameObject.SetActive(true);
 
 		lblMsg.text = mensagem;
@@ -54,10 +54,10 @@ public class AvisoHudControl : MonoBehaviour {
 	}
 	
 	public void ocultar() {
-		cameraControl.setMovimentacao(true);
-		GameManager.simulador.setStatusHud(false);
+		//cameraControl.setMovimentacao(true);
+		//GameManager.simulador.setStatusHud(false);
 		
-		estado = true;
+		//estado = true;
 
 		gameObject.SetActive(false);
 	}
