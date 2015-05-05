@@ -60,11 +60,11 @@ public class Simulador {
 			public float custoGelo = 0;
 			public float custoTotal = 0;
 
-			public float custoSucoLaranja = 0;
-			public float custoSucoLimao = 0;
-			public float custoSucoPessego = 0;
-			public float custoSucoTamarindo = 0;
-			public float custoSucoUva = 0;
+			public float custoSucoLaranja = 0; public float custoSucoLaranjaCopo = 0; public float custoSucoLaranjaGelo = 0;
+			public float custoSucoLimao = 0; public float custoSucoLimaoCopo = 0; public float custoSucoLimaoGelo = 0;
+			public float custoSucoPessego = 0; public float custoSucoPessegoCopo = 0; public float custoSucoPessegoGelo = 0;
+			public float custoSucoTamarindo = 0; public float custoSucoTamarindoCopo = 0; public float custoSucoTamarindoGelo = 0;
+			public float custoSucoUva = 0; public float custoSucoUvaCopo = 0; public float custoSucoUvaGelo = 0;
 								
 			public float lucroLaranja = 0;
 			public float lucroLimao = 0;
@@ -94,11 +94,11 @@ public class Simulador {
 			public float custoGeloTurno = 0;
 			public float custoTotalTurno = 0;
 
-			public float custoSucoLaranjaTurno = 0;
-			public float custoSucoLimaoTurno = 0;
-			public float custoSucoPessegoTurno = 0;
-			public float custoSucoTamarindoTurno = 0;
-			public float custoSucoUvaTurno = 0;
+			public float custoSucoLaranjaTurno = 0; public float custoSucoLaranjaCopoTurno = 0; public float custoSucoLaranjaGeloTurno = 0;
+			public float custoSucoLimaoTurno = 0; public float custoSucoLimaoCopoTurno = 0; public float custoSucoLimaoGeloTurno = 0;
+			public float custoSucoPessegoTurno = 0; public float custoSucoPessegoCopoTurno = 0; public float custoSucoPessegoGeloTurno = 0;
+			public float custoSucoTamarindoTurno = 0; public float custoSucoTamarindoCopoTurno = 0; public float custoSucoTamarindoGeloTurno = 0;
+			public float custoSucoUvaTurno = 0; public float custoSucoUvaCopoTurno = 0; public float custoSucoUvaGeloTurno = 0;
 					
 			public float lucroLaranjaTurno = 0;
 			public float lucroLimaoTurno = 0;
@@ -193,11 +193,11 @@ public class Simulador {
 			this.custoGeloTurno = 0;
 			this.custoTotalTurno = 0;
 
-			this.custoSucoLaranjaTurno = 0;
-			this.custoSucoLimaoTurno = 0;
-			this.custoSucoPessegoTurno = 0;
-			this.custoSucoTamarindoTurno = 0;
-			this.custoSucoUvaTurno = 0;
+			this.custoSucoLaranjaTurno = 0; this.custoSucoLaranjaCopoTurno = 0; this.custoSucoLaranjaGeloTurno = 0;
+			this.custoSucoLimaoTurno = 0; this.custoSucoLimaoCopoTurno = 0; this.custoSucoLimaoGeloTurno = 0;
+			this.custoSucoPessegoTurno = 0; this.custoSucoPessegoCopoTurno = 0; this.custoSucoPessegoGeloTurno = 0;
+			this.custoSucoTamarindoTurno = 0; this.custoSucoTamarindoCopoTurno = 0; this.custoSucoTamarindoGeloTurno = 0;
+			this.custoSucoUvaTurno = 0; this.custoSucoUvaCopoTurno = 0; this.custoSucoUvaGeloTurno = 0;
 				
 			this.lucroLaranjaTurno = 0;
 			this.lucroLimaoTurno = 0;

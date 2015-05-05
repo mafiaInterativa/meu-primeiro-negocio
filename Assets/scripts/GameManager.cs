@@ -97,12 +97,22 @@ public class GameManager : MonoBehaviour {
 		GameManager.simulador.custoSucoPessego = int.Parse( dados[38] );
 		GameManager.simulador.custoSucoTamarindo = int.Parse( dados[39] );
 		GameManager.simulador.custoSucoUva = int.Parse( dados[40] );
-		GameManager.simulador.lucroLaranja = int.Parse( dados[41] );
-		GameManager.simulador.lucroLimao = int.Parse( dados[42] );
-		GameManager.simulador.lucroPessego = int.Parse( dados[43] );
-		GameManager.simulador.lucroTamarindo = int.Parse( dados[44] );
-		GameManager.simulador.lucroUva = int.Parse( dados[45] );
-		GameManager.simulador.lucroTotal = int.Parse( dados[46] );
+		GameManager.simulador.custoSucoLaranjaCopo = int.Parse( dados[41] );
+		GameManager.simulador.custoSucoLaranjaGelo = int.Parse( dados[42] );
+		GameManager.simulador.custoSucoLimaoCopo = int.Parse( dados[43] );
+		GameManager.simulador.custoSucoLimaoGelo = int.Parse( dados[44] );
+		GameManager.simulador.custoSucoPessegoCopo = int.Parse( dados[45] );
+		GameManager.simulador.custoSucoPessegoGelo = int.Parse( dados[46] );
+		GameManager.simulador.custoSucoTamarindoCopo = int.Parse( dados[47] );
+		GameManager.simulador.custoSucoTamarindoGelo = int.Parse( dados[48] );
+		GameManager.simulador.custoSucoUvaCopo = int.Parse( dados[49] );
+		GameManager.simulador.custoSucoUvaGelo = int.Parse( dados[50] );
+		GameManager.simulador.lucroLaranja = int.Parse( dados[51] );
+		GameManager.simulador.lucroLimao = int.Parse( dados[52] );
+		GameManager.simulador.lucroPessego = int.Parse( dados[53] );
+		GameManager.simulador.lucroTamarindo = int.Parse( dados[54] );
+		GameManager.simulador.lucroUva = int.Parse( dados[55] );
+		GameManager.simulador.lucroTotal = int.Parse( dados[56] );
 		
 		GameObject[] placas;
 		placas = GameObject.FindGameObjectsWithTag("Placa");

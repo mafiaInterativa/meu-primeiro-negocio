@@ -614,9 +614,16 @@ public class TendaControl : MonoBehaviour {
 			//custo
 			GameManager.simulador.custoSucoLaranjaTurno += ( GameManager.simulador.custoLaranja / GameManager.simulador.qtdLaranjaAcumulado ) + 1;
 			GameManager.simulador.custoSucoLaranja += ( GameManager.simulador.custoLaranja / GameManager.simulador.qtdLaranjaAcumulado ) + 1;
+
+			GameManager.simulador.custoSucoLaranjaCopoTurno += 1;
+			GameManager.simulador.custoSucoLaranjaCopo += 1;
+
 			if(this.GeloSelect){
 				GameManager.simulador.custoSucoLaranjaTurno += 1;
 				GameManager.simulador.custoSucoLaranja += 1;
+
+				GameManager.simulador.custoSucoLaranjaGeloTurno += 1;
+				GameManager.simulador.custoSucoLaranjaGelo += 1;
 			}
 
 			GameManager.simulador.creditar(GameManager.simulador.prcSucoLaranja);
@@ -632,9 +639,16 @@ public class TendaControl : MonoBehaviour {
 			//custo
 			GameManager.simulador.custoSucoLimaoTurno += ( GameManager.simulador.custoLimao / GameManager.simulador.qtdLimaoAcumulado ) + 1;
 			GameManager.simulador.custoSucoLimao += ( GameManager.simulador.custoLimao / GameManager.simulador.qtdLimaoAcumulado ) + 1;
+
+			GameManager.simulador.custoSucoLimaoCopoTurno += 1;
+			GameManager.simulador.custoSucoLimaoCopo += 1;
+
 			if(this.GeloSelect){
 				GameManager.simulador.custoSucoLimaoTurno += 1;
 				GameManager.simulador.custoSucoLimao += 1;
+
+				GameManager.simulador.custoSucoLimaoGeloTurno += 1;
+				GameManager.simulador.custoSucoLimaoGelo += 1;
 			}
 
 			GameManager.simulador.creditar(GameManager.simulador.prcSucoLimao);
@@ -650,9 +664,16 @@ public class TendaControl : MonoBehaviour {
 			//custo
 			GameManager.simulador.custoSucoPessegoTurno += ( GameManager.simulador.custoPessego / GameManager.simulador.qtdPessegoAcumulado ) + 1;
 			GameManager.simulador.custoSucoPessego += ( GameManager.simulador.custoPessego / GameManager.simulador.qtdPessegoAcumulado ) + 1;
+
+			GameManager.simulador.custoSucoPessegoCopoTurno += 1;
+			GameManager.simulador.custoSucoPessegoCopo += 1;
+
 			if(this.GeloSelect){
 				GameManager.simulador.custoSucoPessegoTurno += 1;
 				GameManager.simulador.custoSucoPessego += 1;
+
+				GameManager.simulador.custoSucoPessegoGeloTurno += 1;
+				GameManager.simulador.custoSucoPessegoGelo += 1;
 			}
 
 			GameManager.simulador.creditar(GameManager.simulador.prcSucoPessego);
@@ -668,9 +689,16 @@ public class TendaControl : MonoBehaviour {
 			//custo
 			GameManager.simulador.custoSucoTamarindoTurno += ( GameManager.simulador.custoTamarindo / GameManager.simulador.qtdTamarindoAcumulado ) + 1;
 			GameManager.simulador.custoSucoTamarindo += ( GameManager.simulador.custoTamarindo / GameManager.simulador.qtdTamarindoAcumulado ) + 1;
+
+			GameManager.simulador.custoSucoTamarindoCopoTurno += 1;
+			GameManager.simulador.custoSucoTamarindoCopo += 1;
+
 			if(this.GeloSelect){
 				GameManager.simulador.custoSucoTamarindoTurno += 1;
 				GameManager.simulador.custoSucoTamarindo += 1;
+
+				GameManager.simulador.custoSucoTamarindoGeloTurno += 1;
+				GameManager.simulador.custoSucoTamarindoGelo += 1;
 			}
 
 			GameManager.simulador.creditar(GameManager.simulador.prcSucoTamarindo);
@@ -686,9 +714,16 @@ public class TendaControl : MonoBehaviour {
 			//custo
 			GameManager.simulador.custoSucoUvaTurno += ( GameManager.simulador.custoUva / GameManager.simulador.qtdUvaAcumulado ) + 1;
 			GameManager.simulador.custoSucoUva += ( GameManager.simulador.custoUva / GameManager.simulador.qtdUvaAcumulado ) + 1;
+
+			GameManager.simulador.custoSucoUvaCopoTurno += 1;
+			GameManager.simulador.custoSucoUvaCopo += 1;
+
 			if(this.GeloSelect){
 				GameManager.simulador.custoSucoUvaTurno += 1;
 				GameManager.simulador.custoSucoUva += 1;
+
+				GameManager.simulador.custoSucoUvaGeloTurno += 1;
+				GameManager.simulador.custoSucoUvaGelo += 1;
 			}
 
 			GameManager.simulador.creditar(GameManager.simulador.prcSucoUva);
