@@ -476,10 +476,10 @@ public class TendaControl : MonoBehaviour {
 	private void selecionarItem(string item){
 		if(item == "COPO" && this.CopoSelect == false){
 			if(GameManager.simulador.qtdCopo > 0){
-				this.CopoSelect = true;	
-
-				processador.ColocarCopo();
-				GameManager.simulador.qtdCopo --;
+				if(processador.ColocarCopo()){
+					this.CopoSelect = true;	
+					GameManager.simulador.qtdCopo --;
+				}
 			} else {
 				hudControl.avisoControl.exibir("Você não possuí mais Copos!");
 				this.fimSuprimentos = true;
@@ -488,10 +488,10 @@ public class TendaControl : MonoBehaviour {
 
 		else if(item == "GELO" && this.CopoSelect && this.GeloSelect == false){
 			if(GameManager.simulador.qtdGelo > 0){
-				this.GeloSelect = true;		
-
-				processador.ColocarGelo();
-				GameManager.simulador.qtdGelo --;	
+				if(processador.ColocarGelo()){
+					this.GeloSelect = true;		
+					GameManager.simulador.qtdGelo --;	
+				}
 			} else {
 				hudControl.avisoControl.exibir("Você não possuí mais Gelos!");
 			}
@@ -499,9 +499,10 @@ public class TendaControl : MonoBehaviour {
 
 		else if(item == "LARANJA" ){
 			if(GameManager.simulador.qtdLaranja > 0){
-				processador.ColocarLaranja();
-				this.FrutaSelect = true;
-				this.SucoPreparado = item;
+				if(processador.ColocarLaranja()){
+					this.FrutaSelect = true;
+					this.SucoPreparado = item;
+				}
 			} else {
 				hudControl.avisoControl.exibir("Você não possuí mais Laranjas!");
 				this.fimSuprimentos = true;
@@ -510,9 +511,10 @@ public class TendaControl : MonoBehaviour {
 
 		else if(item == "LIMÃO" ){
 			if(GameManager.simulador.qtdLimao > 0){
-				processador.ColocarLimao();
-				this.FrutaSelect = true;
-				this.SucoPreparado = item;
+				if(processador.ColocarLimao()){
+					this.FrutaSelect = true;
+					this.SucoPreparado = item;
+				}
 			} else {
 				hudControl.avisoControl.exibir("Você não possuí mais Limões!");
 				this.fimSuprimentos = true;
@@ -521,9 +523,10 @@ public class TendaControl : MonoBehaviour {
 
 		else if(item == "PÊSSEGO" ){
 			if(GameManager.simulador.qtdPessego > 0){
-				processador.ColocarPessego();
-				this.FrutaSelect = true;
-				this.SucoPreparado = item;
+				if(processador.ColocarPessego()){
+					this.FrutaSelect = true;
+					this.SucoPreparado = item;
+				}
 			} else {
 				hudControl.avisoControl.exibir("Você não possuí mais Pêssegos!");
 				this.fimSuprimentos = true;
@@ -532,9 +535,10 @@ public class TendaControl : MonoBehaviour {
 
 		else if(item == "TAMARINDO" ){
 			if(GameManager.simulador.qtdTamarindo > 0){
-				processador.ColocarTamarindo();
-				this.FrutaSelect = true;
-				this.SucoPreparado = item;
+				if(processador.ColocarTamarindo()){
+					this.FrutaSelect = true;
+					this.SucoPreparado = item;
+				}
 			} else {
 				hudControl.avisoControl.exibir("Você não possuí mais Tamarindos!");
 				this.fimSuprimentos = true;
@@ -543,9 +547,10 @@ public class TendaControl : MonoBehaviour {
 
 		else if(item == "UVA" ){
 			if(GameManager.simulador.qtdUva > 0){
-				processador.ColocarUva();
-				this.FrutaSelect = true;
-				this.SucoPreparado = item;
+				if(processador.ColocarUva()){
+					this.FrutaSelect = true;
+					this.SucoPreparado = item;
+				}
 			} else {
 				hudControl.avisoControl.exibir("Você não possuí mais Uvas!");
 				this.fimSuprimentos = true;
@@ -556,40 +561,41 @@ public class TendaControl : MonoBehaviour {
 	private void validaSuco(){
 		if( this.CopoSelect && this.FrutaSelect && personagensFila[0] != null ){
 			//anima processador
-			processador.ProcessaSuco();
+			if(processador.ProcessaSuco()){
 
-			//aumenta satisfacao
-			if(this.GeloSelect){
-				personagensFila[0].GetComponent<PersonagemControl>().exibirBalaoSatisfacao("satisfeito");
-				if(personagensFila[0].GetComponent<PersonagemControl>().satisfacao <= 100)
-					personagensFila[0].GetComponent<PersonagemControl>().satisfacao += 10;
+				//aumenta satisfacao
+				if(this.GeloSelect){
+					personagensFila[0].GetComponent<PersonagemControl>().exibirBalaoSatisfacao("satisfeito");
+					if(personagensFila[0].GetComponent<PersonagemControl>().satisfacao <= 100)
+						personagensFila[0].GetComponent<PersonagemControl>().satisfacao += 10;
 
-				GameManager.simulador.publicoSatisfeito++;
+					GameManager.simulador.publicoSatisfeito++;
+				}
+
+				//baixa satisfacao
+				if( SucoPreparado != personagensFila[0].GetComponent<PersonagemControl>().sucoDesejado ){
+					personagensFila[0].GetComponent<PersonagemControl>().exibirBalaoSatisfacao("insatisfeito");
+					personagensFila[0].GetComponent<PersonagemControl>().satisfacao -= 20;
+					if(personagensFila[0].GetComponent<PersonagemControl>().satisfacao < 0)
+						personagensFila[0].GetComponent<PersonagemControl>().satisfacao = 0;
+				} else {
+					personagensFila[0].GetComponent<PersonagemControl>().satisfacao += 5;
+				}
+
+				personagensFila[0].GetComponent<PersonagemControl>().sede = 0;
+
+				//vende o suco
+				debitaSuco(this.SucoPreparado);
+
+				//zera variaveis
+				this.GeloSelect = false;
+				this.CopoSelect = false;	
+				this.FrutaSelect = false;
+				this.SucoPreparado = "";
+
+				//faz cidadao sair da tenda
+				Invoke("AndaFila", 2.3f);
 			}
-
-			//baixa satisfacao
-			if( SucoPreparado != personagensFila[0].GetComponent<PersonagemControl>().sucoDesejado ){
-				personagensFila[0].GetComponent<PersonagemControl>().exibirBalaoSatisfacao("insatisfeito");
-				personagensFila[0].GetComponent<PersonagemControl>().satisfacao -= 20;
-				if(personagensFila[0].GetComponent<PersonagemControl>().satisfacao < 0)
-					personagensFila[0].GetComponent<PersonagemControl>().satisfacao = 0;
-			} else {
-				personagensFila[0].GetComponent<PersonagemControl>().satisfacao += 5;
-			}
-
-			personagensFila[0].GetComponent<PersonagemControl>().sede = 0;
-
-			//vende o suco
-			debitaSuco(this.SucoPreparado);
-
-			//zera variaveis
-			this.GeloSelect = false;
-			this.CopoSelect = false;	
-			this.FrutaSelect = false;
-			this.SucoPreparado = "";
-
-			//faz cidadao sair da tenda
-			Invoke("AndaFila", 2.3f);
 		} else {
 			//som
 			audio.clip = erroSelecao;

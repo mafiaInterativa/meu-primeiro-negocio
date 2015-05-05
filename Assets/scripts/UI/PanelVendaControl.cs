@@ -93,80 +93,80 @@ public class PanelVendaControl : MonoBehaviour {
 
 		//turno
 			mediaTurnoCustoSucoLaranja = GameManager.simulador.custoSucoLaranjaTurno;
-			labelCustoSucoLaranjaTurno.text = "$ " + mediaTurnoCustoSucoLaranja .ToString ("0.00");
+			labelCustoSucoLaranjaTurno.text = "$ " + mediaTurnoCustoSucoLaranja .ToString ("0.00").Replace(".", ",");
 
 			mediaTurnoCustoSucoLimao = GameManager.simulador.custoSucoLimaoTurno;
-			labelCustoSucoLimaoTurno.text = "$ " + mediaTurnoCustoSucoLimao .ToString ("0.00");
+			labelCustoSucoLimaoTurno.text = "$ " + mediaTurnoCustoSucoLimao .ToString ("0.00").Replace(".", ",");
 
 			mediaTurnoCustoSucoPessego = GameManager.simulador.custoSucoPessegoTurno;
-			labelCustoSucoPessegoTurno.text = "$ " + mediaTurnoCustoSucoPessego .ToString ("0.00");
+			labelCustoSucoPessegoTurno.text = "$ " + mediaTurnoCustoSucoPessego .ToString ("0.00").Replace(".", ",");
 
 			mediaTurnoCustoSucoTamarindo = GameManager.simulador.custoSucoTamarindoTurno;
-			labelCustoSucoTamarindoTurno.text = "$ " + mediaTurnoCustoSucoTamarindo .ToString ("0.00");
+			labelCustoSucoTamarindoTurno.text = "$ " + mediaTurnoCustoSucoTamarindo .ToString ("0.00").Replace(".", ",");
 
 			mediaTurnoCustoSucoUva = GameManager.simulador.custoSucoUvaTurno;
-			labelCustoSucoUvaTurno.text = "$ " + mediaTurnoCustoSucoUva .ToString ("0.00");
+			labelCustoSucoUvaTurno.text = "$ " + mediaTurnoCustoSucoUva .ToString ("0.00").Replace(".", ",");
 
 
 			mediaTurnoReceitaSucoLaranja = GameManager.simulador.lucroLaranjaTurno;
-			labelReceitaSucoLaranjaTurno.text = "$ " + mediaTurnoReceitaSucoLaranja .ToString ("0.00");
+			labelReceitaSucoLaranjaTurno.text = "$ " + mediaTurnoReceitaSucoLaranja .ToString ("0.00").Replace(".", ",");
 
 			mediaTurnoReceitaSucoLimao = GameManager.simulador.lucroLimaoTurno;
-			labelReceitaSucoLimaoTurno.text = "$ " + mediaTurnoReceitaSucoLimao .ToString ("0.00");
+			labelReceitaSucoLimaoTurno.text = "$ " + mediaTurnoReceitaSucoLimao .ToString ("0.00").Replace(".", ",");
 
 			mediaTurnoReceitaSucoPessego = GameManager.simulador.lucroPessegoTurno;
-			labelReceitaSucoPessegoTurno.text = "$ " + mediaTurnoReceitaSucoPessego .ToString ("0.00");
+			labelReceitaSucoPessegoTurno.text = "$ " + mediaTurnoReceitaSucoPessego .ToString ("0.00").Replace(".", ",");
 
 			mediaTurnoReceitaSucoTamarindo = GameManager.simulador.lucroTamarindoTurno;
-			labelReceitaSucoTamarindoTurno.text = "$ " + mediaTurnoReceitaSucoTamarindo .ToString ("0.00");
+			labelReceitaSucoTamarindoTurno.text = "$ " + mediaTurnoReceitaSucoTamarindo .ToString ("0.00").Replace(".", ",");
 
 			mediaTurnoReceitaSucoUva = GameManager.simulador.lucroUvaTurno;
-			labelReceitaSucoUvaTurno.text = "$ " + mediaTurnoReceitaSucoUva .ToString ("0.00");
+			labelReceitaSucoUvaTurno.text = "$ " + mediaTurnoReceitaSucoUva .ToString ("0.00").Replace(".", ",");
 
 			
-			labelLucroSucoLaranjaTurno.text = "$ " + (mediaTurnoReceitaSucoLaranja - mediaTurnoCustoSucoLaranja).ToString ("0.00");
-			labelLucroSucoLimaoTurno.text = "$ " + (mediaTurnoReceitaSucoLimao - mediaTurnoCustoSucoLimao).ToString ("0.00");
-			labelLucroSucoPessegoTurno.text = "$ " + (mediaTurnoReceitaSucoPessego - mediaTurnoCustoSucoPessego).ToString ("0.00");
-			labelLucroSucoTamarindoTurno.text = "$ " + (mediaTurnoReceitaSucoTamarindo - mediaTurnoCustoSucoTamarindo).ToString ("0.00");
-			labelLucroSucoUvaTurno.text = "$ " + (mediaTurnoReceitaSucoUva - mediaTurnoCustoSucoUva).ToString ("0.00");
+			labelLucroSucoLaranjaTurno.text = "$ " + (mediaTurnoReceitaSucoLaranja - mediaTurnoCustoSucoLaranja).ToString ("0.00").Replace(".", ",");
+			labelLucroSucoLimaoTurno.text = "$ " + (mediaTurnoReceitaSucoLimao - mediaTurnoCustoSucoLimao).ToString ("0.00").Replace(".", ",");
+			labelLucroSucoPessegoTurno.text = "$ " + (mediaTurnoReceitaSucoPessego - mediaTurnoCustoSucoPessego).ToString ("0.00").Replace(".", ",");
+			labelLucroSucoTamarindoTurno.text = "$ " + (mediaTurnoReceitaSucoTamarindo - mediaTurnoCustoSucoTamarindo).ToString ("0.00").Replace(".", ",");
+			labelLucroSucoUvaTurno.text = "$ " + (mediaTurnoReceitaSucoUva - mediaTurnoCustoSucoUva).ToString ("0.00").Replace(".", ",");
 		
 		//acumulado
 			mediaAcumuladoCustoSucoLaranja = GameManager.simulador.custoSucoLaranja;
-			labelCustoSucoLaranjaAcumulado.text = "$ " + mediaAcumuladoCustoSucoLaranja .ToString ("0.00");
+			labelCustoSucoLaranjaAcumulado.text = "$ " + mediaAcumuladoCustoSucoLaranja .ToString ("0.00").Replace(".", ",");
 
 			mediaAcumuladoCustoSucoLimao = GameManager.simulador.custoSucoLimao;
-			labelCustoSucoLimaoAcumulado.text = "$ " + mediaAcumuladoCustoSucoLimao .ToString ("0.00");
+			labelCustoSucoLimaoAcumulado.text = "$ " + mediaAcumuladoCustoSucoLimao .ToString ("0.00").Replace(".", ",");
 
 			mediaAcumuladoCustoSucoPessego = GameManager.simulador.custoSucoPessego;
-			labelCustoSucoPessegoAcumulado.text = "$ " + mediaAcumuladoCustoSucoPessego .ToString ("0.00");
+			labelCustoSucoPessegoAcumulado.text = "$ " + mediaAcumuladoCustoSucoPessego .ToString ("0.00").Replace(".", ",");
 
 			mediaAcumuladoCustoSucoTamarindo = GameManager.simulador.custoSucoTamarindo;
-			labelCustoSucoTamarindoAcumulado.text = "$ " + mediaAcumuladoCustoSucoTamarindo .ToString ("0.00");
+			labelCustoSucoTamarindoAcumulado.text = "$ " + mediaAcumuladoCustoSucoTamarindo .ToString ("0.00").Replace(".", ",");
 
 			mediaAcumuladoCustoSucoUva = GameManager.simulador.custoSucoUva;
-			labelCustoSucoUvaAcumulado.text = "$ " + mediaAcumuladoCustoSucoUva .ToString ("0.00");
+			labelCustoSucoUvaAcumulado.text = "$ " + mediaAcumuladoCustoSucoUva .ToString ("0.00").Replace(".", ",");
 			
 
 			mediaAcumuladoReceitaSucoLaranja = GameManager.simulador.lucroLaranja;
-			labelReceitaSucoLaranjaAcumulado.text = "$ " + mediaAcumuladoReceitaSucoLaranja .ToString ("0.00");
+			labelReceitaSucoLaranjaAcumulado.text = "$ " + mediaAcumuladoReceitaSucoLaranja .ToString ("0.00").Replace(".", ",");
 
 			mediaAcumuladoReceitaSucoLimao = GameManager.simulador.lucroLimao;
-			labelReceitaSucoLimaoAcumulado.text = "$ " + mediaAcumuladoReceitaSucoLimao .ToString ("0.00");
+			labelReceitaSucoLimaoAcumulado.text = "$ " + mediaAcumuladoReceitaSucoLimao .ToString ("0.00").Replace(".", ",");
 		
 			mediaAcumuladoReceitaSucoPessego = GameManager.simulador.lucroPessego;
-			labelReceitaSucoPessegoAcumulado.text = "$ " + mediaAcumuladoReceitaSucoPessego .ToString ("0.00");
+			labelReceitaSucoPessegoAcumulado.text = "$ " + mediaAcumuladoReceitaSucoPessego .ToString ("0.00").Replace(".", ",");
 
 			mediaAcumuladoReceitaSucoTamarindo = GameManager.simulador.lucroTamarindo;
-			labelReceitaSucoTamarindoAcumulado.text = "$ " + mediaAcumuladoReceitaSucoTamarindo .ToString ("0.00");
+			labelReceitaSucoTamarindoAcumulado.text = "$ " + mediaAcumuladoReceitaSucoTamarindo .ToString ("0.00").Replace(".", ",");
 
 			mediaAcumuladoReceitaSucoUva = GameManager.simulador.lucroUva;
-			labelReceitaSucoUvaAcumulado.text = "$ " + mediaAcumuladoReceitaSucoUva .ToString ("0.00");
+			labelReceitaSucoUvaAcumulado.text = "$ " + mediaAcumuladoReceitaSucoUva .ToString ("0.00").Replace(".", ",");
 
 
-			labelLucroSucoLaranjaAcumulado.text = "$ " + (mediaAcumuladoReceitaSucoLaranja - mediaAcumuladoCustoSucoLaranja).ToString ("0.00");
-			labelLucroSucoLimaoAcumulado.text = "$ " + (mediaAcumuladoReceitaSucoLimao - mediaAcumuladoCustoSucoLimao).ToString ("0.00");
-			labelLucroSucoPessegoAcumulado.text = "$ " + (mediaAcumuladoReceitaSucoPessego - mediaAcumuladoCustoSucoPessego).ToString ("0.00");
-			labelLucroSucoTamarindoAcumulado.text = "$ " + (mediaAcumuladoReceitaSucoTamarindo - mediaAcumuladoCustoSucoTamarindo).ToString ("0.00");
-			labelLucroSucoUvaAcumulado.text = "$ " + (mediaAcumuladoReceitaSucoUva - mediaAcumuladoCustoSucoUva).ToString ("0.00");
+			labelLucroSucoLaranjaAcumulado.text = "$ " + (mediaAcumuladoReceitaSucoLaranja - mediaAcumuladoCustoSucoLaranja).ToString ("0.00").Replace(".", ",");
+			labelLucroSucoLimaoAcumulado.text = "$ " + (mediaAcumuladoReceitaSucoLimao - mediaAcumuladoCustoSucoLimao).ToString ("0.00").Replace(".", ",");
+			labelLucroSucoPessegoAcumulado.text = "$ " + (mediaAcumuladoReceitaSucoPessego - mediaAcumuladoCustoSucoPessego).ToString ("0.00").Replace(".", ",");
+			labelLucroSucoTamarindoAcumulado.text = "$ " + (mediaAcumuladoReceitaSucoTamarindo - mediaAcumuladoCustoSucoTamarindo).ToString ("0.00").Replace(".", ",");
+			labelLucroSucoUvaAcumulado.text = "$ " + (mediaAcumuladoReceitaSucoUva - mediaAcumuladoCustoSucoUva).ToString ("0.00").Replace(".", ",");
 	}
 }

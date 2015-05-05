@@ -51,6 +51,14 @@ public class GameOverHudControl : MonoBehaviour {
 	}
 	
 	public void ocultar() {
+		//envia para a plataforma
+			GameObject loginHud = GameObject.Find ("_Login");
+			loginHud.GetComponent<UserService> ().SetHighScore(GameManager.simulador.pontuacao);
+			loginHud.GetComponent<UserService> ().CallSendScore();
+
+		//deleta save
+			PlayerPrefs.DeleteAll();
+
 		Application.LoadLevel ("level1"); 
 	}
 

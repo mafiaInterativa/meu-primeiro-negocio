@@ -46,94 +46,144 @@ public class ProcessadorControl : MonoBehaviour {
 		}
 	}
 
-	public void ProcessaSuco(){
+	public bool ProcessaSuco(){
+		if (!animation.isPlaying){
+			animation.Play("ProcessadorManivelaAnim");
+			sucoParticula.Play();
+		
+			LimpaFrutas();
+			currentTempoSuco = 0;
+			timerProcessaSuco = true;
+			
+			//som
+			audio.clip = sucoSound;
+			audio.Play ();
 
-		animation.Play("ProcessadorManivelaAnim");
-		sucoParticula.Play();
-		LimpaFrutas();
-		currentTempoSuco = 0;
-		timerProcessaSuco = true;
-
-		//som
-		audio.clip = sucoSound;
-		audio.Play ();
+			return true;
+		} else {
+			return false;
+		}
 	}
 
-	public void ColocarCopo(){
-		animation.Play("ProcessadorCopoAnim");
+	public bool ColocarCopo(){
+		if (!animation.isPlaying){
+			animation.Play("ProcessadorCopoAnim");
+		
+			//som
+			audio.clip = copoSound;
+			audio.Play ();
 
-		//som
-		audio.clip = copoSound;
-		audio.Play ();
+			return true;
+		} else {
+			return false;
+		}
 	}
 
-	public void ColocarGelo(){
-		gelo.SetActive(true);
-		animation.Play("ProcessadorGeloAnim");
+	public bool ColocarGelo(){
+		if (!animation.isPlaying){
+			gelo.SetActive(true);
 
-		//som
-		audio.clip = geloSound;
-		audio.Play ();
+			animation.Play("ProcessadorGeloAnim");
+		
+			//som
+			audio.clip = geloSound;
+			audio.Play ();
+
+			return true;
+		} else {
+			return false;
+		}
 	}
 
-	public void ColocarLaranja(){
-		LimpaFrutas();
-		laranja.SetActive(true);
+	public bool ColocarLaranja(){
+		if (!animation.isPlaying){
+			LimpaFrutas();
+			laranja.SetActive(true);
 
-		sucoParticula.startColor = corLaranja;
+			sucoParticula.startColor = corLaranja;
 
-		animation.Play("ProcessadorFrutasAnim");
+			animation.Play("ProcessadorFrutasAnim");
+		
+			//som
+			audio.clip = frutaSound;
+			audio.Play ();
 
-		//som
-		audio.clip = frutaSound;
-		audio.Play ();
+			return true;
+		} else {
+			return false;
+		}
 	}
-	public void ColocarLimao(){
-		LimpaFrutas();
-		limao.SetActive(true);
+	public bool ColocarLimao(){
+		if (!animation.isPlaying){
+			LimpaFrutas();
+			limao.SetActive(true);
+			
+			sucoParticula.startColor = corLimao;
 
-		sucoParticula.startColor = corLimao;
+			animation.Play("ProcessadorFrutasAnim");
+		
+			//som
+			audio.clip = frutaSound;
+			audio.Play ();
 
-		animation.Play("ProcessadorFrutasAnim");
-
-		//som
-		audio.clip = frutaSound;
-		audio.Play ();
+			return true;
+		} else {
+			return false;
+		}
 	}
-	public void ColocarPessego(){
-		LimpaFrutas();
-		pessego.SetActive(true);
+	public bool ColocarPessego(){
+		if (!animation.isPlaying){
+			LimpaFrutas();
+			pessego.SetActive(true);
+			
+			sucoParticula.startColor = corPessego;
 
-		sucoParticula.startColor = corPessego;
+			animation.Play("ProcessadorFrutasAnim");
+		
+			//som
+			audio.clip = frutaSound;
+			audio.Play ();
 
-		animation.Play("ProcessadorFrutasAnim");
-
-		//som
-		audio.clip = frutaSound;
-		audio.Play ();
+			return true;
+		} else {
+			return false;
+		}
 	}
-	public void ColocarTamarindo(){
-		LimpaFrutas();
-		tamarindo.SetActive(true);
-		sucoParticula.startColor = corTamarindo;
+	public bool ColocarTamarindo(){
+		if (!animation.isPlaying){
+			LimpaFrutas();
+			tamarindo.SetActive(true);
+		
+			sucoParticula.startColor = corTamarindo;
 
-		animation.Play("ProcessadorFrutasAnim");
+			animation.Play("ProcessadorFrutasAnim");
+		
+			//som
+			audio.clip = frutaSound;
+			audio.Play ();
 
-		//som
-		audio.clip = frutaSound;
-		audio.Play ();
+			return true;
+		} else {
+			return false;
+		}
 	}
-	public void ColocarUva(){
-		LimpaFrutas();
-		uva.SetActive(true);
+	public bool ColocarUva(){
+		if (!animation.isPlaying){
+			LimpaFrutas();
+			uva.SetActive(true);
 
-		sucoParticula.startColor = corUva;
+			sucoParticula.startColor = corUva;
 
-		animation.Play("ProcessadorFrutasAnim");
+			animation.Play("ProcessadorFrutasAnim");
+		
+			//som
+			audio.clip = frutaSound;
+			audio.Play ();
 
-		//som
-		audio.clip = frutaSound;
-		audio.Play ();
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public void LimpaFrutas(){
@@ -148,7 +198,4 @@ public class ProcessadorControl : MonoBehaviour {
 		copo.SetActive(false);
 		gelo.SetActive(false);
 	}
-
-
-
 }
