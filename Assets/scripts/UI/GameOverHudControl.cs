@@ -59,6 +59,9 @@ public class GameOverHudControl : MonoBehaviour {
 		//deleta save
 			PlayerPrefs.DeleteAll();
 
+		//resset vars
+			GameManager.simulador.ressetAllVariables();
+
 		Application.LoadLevel ("level1"); 
 	}
 

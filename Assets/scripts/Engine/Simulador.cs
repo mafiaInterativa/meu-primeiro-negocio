@@ -388,4 +388,126 @@ public class Simulador {
 		
 			return decodedText;
 		}
+
+		public void ressetAllVariables(){
+			/* pontuacao */
+			this.pontuacao = 0;
+			
+			/* orcamento */
+			this.orcamento = 100;
+			this.aluguel = 0;
+			
+			/* turno */
+			this.turno = 0;
+			this.tempoTotalTurno = 60.0f;
+			this.tempoAtualTurno = 0;
+			
+			/* recursos */
+			this.qtdLaranja = 0;
+			this.qtdLimao = 0;
+			this.qtdUva = 0;
+			this.qtdTamarindo = 0;
+			this.qtdPessego = 0;
+			this.qtdGelo = 0;
+			this.qtdCopo = 0;	
+			
+			this.prcSucoLaranja = 5;	
+			this.prcSucoLimao = 6;
+			this.prcSucoUva = 11;
+			this.prcSucoTamarindo = 14;
+			this.prcSucoPessego = 7;
+
+			/* controladores */
+			this.statusConstrucao = true;
+			this.statusVenda = false;
+			this.statusHud = false;
+			this.gameOver = false;
+			this.gameWin = false;
+			
+			/* balanco */
+			this.ressetarFluxoDeCaixa = false;
+			
+			//acumulado
+			this.custoAluguel = 0;
+			this.custoLaranja = 0;
+			this.custoLimao = 0;
+			this.custoPessego = 0;
+			this.custoTamarindo = 0;
+			this.custoUva = 0;
+			this.custoCopo = 0;
+			this.custoGelo = 0;
+			this.custoTotal = 0;
+			
+			this.custoSucoLaranja = 0; this.custoSucoLaranjaCopo = 0; this.custoSucoLaranjaGelo = 0;
+			this.custoSucoLimao = 0; this.custoSucoLimaoCopo = 0; this.custoSucoLimaoGelo = 0;
+			this.custoSucoPessego = 0; this.custoSucoPessegoCopo = 0; this.custoSucoPessegoGelo = 0;
+			this.custoSucoTamarindo = 0; this.custoSucoTamarindoCopo = 0; this.custoSucoTamarindoGelo = 0;
+			this.custoSucoUva = 0; this.custoSucoUvaCopo = 0; this.custoSucoUvaGelo = 0;
+			
+			this.lucroLaranja = 0;
+			this.lucroLimao = 0;
+			this.lucroPessego = 0;
+			this.lucroTamarindo = 0;
+			this.lucroUva = 0;
+			this.lucroTotal = 0;
+			
+			this.qtdLaranjaAcumulado = 0;
+			this.qtdLimaoAcumulado = 0;
+			this.qtdUvaAcumulado = 0;
+			this.qtdTamarindoAcumulado = 0;
+			this.qtdPessegoAcumulado = 0;
+			this.qtdGeloAcumulado = 0;
+			this.qtdCopoAcumulado = 0;
+			
+			this.saldo = 0;			
+			
+			//turno
+			this.custoAluguelTurno = 0;
+			this.custoLaranjaTurno = 0;
+			this.custoLimaoTurno = 0;
+			this.custoPessegoTurno = 0;
+			this.custoTamarindoTurno = 0;
+			this.custoUvaTurno = 0;
+			this.custoCopoTurno = 0;
+			this.custoGeloTurno = 0;
+			this.custoTotalTurno = 0;
+			
+			this.custoSucoLaranjaTurno = 0; this.custoSucoLaranjaCopoTurno = 0; this.custoSucoLaranjaGeloTurno = 0;
+			this.custoSucoLimaoTurno = 0; this.custoSucoLimaoCopoTurno = 0; this.custoSucoLimaoGeloTurno = 0;
+			this.custoSucoPessegoTurno = 0; this.custoSucoPessegoCopoTurno = 0; this.custoSucoPessegoGeloTurno = 0;
+			this.custoSucoTamarindoTurno = 0; this.custoSucoTamarindoCopoTurno = 0; this.custoSucoTamarindoGeloTurno = 0;
+			this.custoSucoUvaTurno = 0; this.custoSucoUvaCopoTurno = 0; this.custoSucoUvaGeloTurno = 0;
+			
+			this.lucroLaranjaTurno = 0;
+			this.lucroLimaoTurno = 0;
+			this.lucroPessegoTurno = 0;
+			this.lucroTamarindoTurno = 0;
+			this.lucroUvaTurno = 0;
+			this.lucroTotalTurno = 0;
+			
+			this.qtdLaranjaTurno = 0;
+			this.qtdLimaoTurno = 0;
+			this.qtdUvaTurno = 0;
+			this.qtdTamarindoTurno = 0;
+			this.qtdPessegoTurno = 0;
+			this.qtdGeloTurno = 0;
+			this.qtdCopoTurno = 0;	
+			
+			this.saldoTurno = 0;
+
+			/* publico */
+			this.publicoSatisfeito = 0;
+			
+			/* game config */
+			//mouse
+			this.mouseType = "pointer";
+			
+			//dados usuario
+			this.nomeUsuario = "";
+			this.emailUsuario = "";
+			
+			//game
+			this.pause = false;
+			this.flagSave = "";
+		}
 }
