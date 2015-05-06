@@ -100,8 +100,12 @@ public class TendaHudControl : MonoBehaviour {
 			//inicia simulacao
 			GameManager.simulador.iniciarSimulacao();
 		} else {
-			//aviso
-			avisoControl.exibir("É necessário que você compre suprimentos mínimos!");
+			if(GameManager.simulador.orcamento > 0){
+				//aviso
+				avisoControl.exibir("É necessário que você compre suprimentos mínimos!");
+			} else {
+				GameManager.simulador.gameOver = true;
+			}
 		}
 	}
 
